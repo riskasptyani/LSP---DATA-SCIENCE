@@ -1,9 +1,9 @@
 import streamlit as st
-import joblib  # Untuk memuat model
+import joblib
 import pandas as pd
 
-# Muat model yang telah dilatih (pastikan Anda sudah melatih dan menyimpan model sebelumnya)
-model = joblib.load('model.pkl')  # Ganti dengan nama file model Anda
+
+model = joblib.load('model.pkl')  
 
 def predict(text):
     """Untuk memprediksi hate speech dan offensive language."""
@@ -11,7 +11,6 @@ def predict(text):
     prediction = model.predict(text_vectorized)
     return prediction[0]
 
-# Dashboard dengan Streamlit
 st.title("Hate Speech and Offensive Language Detection")
 
 st.write("Masukkan teks untuk mendeteksi apakah terdapat hate speech atau offensive language.")
